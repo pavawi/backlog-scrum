@@ -1,21 +1,28 @@
 package com.zhonyang.scrum.backlog.controller;
 
 import com.zhonyang.scrum.backlog.common.annotation.IgnoreResponseAdvice;
-import com.zhonyang.scrum.backlog.common.exception.category.BusinessException;
-import io.swagger.annotations.ApiOperation;
+import com.zhonyang.scrum.backlog.common.exception.BusinessException;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 测试api返回和异常捕获
+ *
+ * @author alan
+ * @version 1.0
+ * @date 2021/6/4 21:12
+ */
 @RestController
-public class DemoController {
+@RequestMapping("/test")
+public class ResponseTestController {
 
     /**
      * 测试 返回为 string类型 值为 不为null
      */
-    @GetMapping("test")
-    @ApiOperation("test")
+    @GetMapping("/")
     public String test() {
         return "test";
     }
@@ -23,8 +30,7 @@ public class DemoController {
     /**
      * 测试 返回为 String类型 值为 null
      */
-    @GetMapping("test-null")
-    @ApiOperation("test-null")
+    @GetMapping("/null")
     public String testNull() {
         return null;
     }
@@ -32,9 +38,7 @@ public class DemoController {
     /**
      * 测试 返回为 object类型 值为 null
      */
-    @GetMapping("object-null")
-    @ApiOperation("object-null")
-
+    @GetMapping("/object")
     public Object objectNull() {
         return null;
     }
@@ -42,9 +46,7 @@ public class DemoController {
     /**
      * 测试 返回为 list类型 值为 null
      */
-    @GetMapping("test-list-null")
-    @ApiOperation("test-list-null")
-
+    @GetMapping("/list")
     public List<String> testListNull() {
         return null;
     }
@@ -52,19 +54,27 @@ public class DemoController {
     /**
      * {@link IgnoreResponseAdvice} 使用
      */
+    @GetMapping("/ignore")
     @IgnoreResponseAdvice
-    @GetMapping("ignor")
-    @ApiOperation("ignor")
-    public String ignor() {
-        return "ignor";
+    public String Ignore() {
+        return "Ignore";
     }
 
     /**
      * 全局异常处理
      */
-    @GetMapping("businessError")
-    @ApiOperation("businessError")
-    public String businessError(String test) {
+    @GetMapping("/businessError")
+    public String businessError() {
         throw new BusinessException(0, "异常演示");
     }
+
+    /**
+     * 全局异常处理
+     */
+    @GetMapping("/error")
+    @IgnoreResponseAdvice(errorDispose = false)
+    public String error() {
+        throw new BusinessException(0, "异常演示");
+    }
+
 }

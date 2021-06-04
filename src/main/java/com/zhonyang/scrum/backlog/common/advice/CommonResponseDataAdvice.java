@@ -2,8 +2,8 @@ package com.zhonyang.scrum.backlog.common.advice;
 
 import cn.hutool.json.JSONUtil;
 import com.zhonyang.scrum.backlog.common.GlobalDefaultProperties;
-import com.zhonyang.scrum.backlog.common.Result;
 import com.zhonyang.scrum.backlog.common.annotation.IgnoreResponseAdvice;
+import com.zhonyang.scrum.backlog.common.api.Result;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.MethodParameter;
@@ -15,6 +15,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
+import javax.annotation.Resource;
+
 /**
  * @description: {@link IgnoreResponseAdvice} 处理解析 {@link ResponseBodyAdvice} 统一返回包装器
  * @author: alan
@@ -25,11 +27,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 @PropertySource(value = "classpath:dispose.properties", encoding = "UTF-8")
 public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
 
+    @Resource
     private GlobalDefaultProperties globalDefaultProperties;
 
-    public CommonResponseDataAdvice(GlobalDefaultProperties globalDefaultProperties) {
-        this.globalDefaultProperties = globalDefaultProperties;
-    }
 
     @Override
     @SuppressWarnings("all")

@@ -5,7 +5,7 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.zhonyang.scrum.backlog.common.exception.category.BusinessException;
+import com.zhonyang.scrum.backlog.common.exception.BusinessException;
 import com.zhonyang.scrum.backlog.entity.User;
 import com.zhonyang.scrum.backlog.mapper.UserMapper;
 import io.swagger.annotations.ApiOperation;

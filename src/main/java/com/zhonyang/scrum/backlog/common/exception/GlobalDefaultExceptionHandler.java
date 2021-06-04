@@ -1,9 +1,8 @@
 package com.zhonyang.scrum.backlog.common.exception;
 
-import com.zhonyang.scrum.backlog.common.Result;
 import com.zhonyang.scrum.backlog.common.annotation.IgnoreResponseAdvice;
-import com.zhonyang.scrum.backlog.common.exception.category.BusinessException;
-import com.zhonyang.scrum.backlog.common.exception.error.CommonErrorCode;
+import com.zhonyang.scrum.backlog.common.api.CommonErrorCode;
+import com.zhonyang.scrum.backlog.common.api.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;

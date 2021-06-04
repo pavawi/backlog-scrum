@@ -1,7 +1,7 @@
-package com.zhonyang.scrum.backlog.common.exception.category;
+package com.zhonyang.scrum.backlog.common.exception;
 
-import com.zhonyang.scrum.backlog.common.exception.error.CommonErrorCode;
-import com.zhonyang.scrum.backlog.common.exception.error.details.BusinessErrorCode;
+import com.zhonyang.scrum.backlog.common.api.CommonErrorCode;
+import com.zhonyang.scrum.backlog.common.api.IErrorCode;
 
 /**
  * @description: {@link RuntimeException} 通用业务异常
@@ -26,7 +26,7 @@ public class BusinessException extends RuntimeException {
      *
      * @param errorCode 异常枚举
      */
-    public BusinessException(BusinessErrorCode errorCode) {
+    public BusinessException(IErrorCode errorCode) {
         super(errorCode.getMessage());
         this.code = errorCode.getCode();
     }
