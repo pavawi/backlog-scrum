@@ -1,4 +1,4 @@
-package com.zhonyang.scrum.backlog.controller;
+package com.zhonyang.scrum.backlog.modules.base.controller;
 
 import com.zhonyang.scrum.backlog.common.annotation.IgnoreResponseAdvice;
 import com.zhonyang.scrum.backlog.common.exception.BusinessException;

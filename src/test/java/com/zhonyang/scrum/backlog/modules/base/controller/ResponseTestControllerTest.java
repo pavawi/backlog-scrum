@@ -1,4 +1,4 @@
-package com.zhonyang.scrum.backlog.controller;
+package com.zhonyang.scrum.backlog.modules.base.controller;
 
 import com.zhonyang.scrum.backlog.common.api.Result;
 import org.assertj.core.api.Assertions;
