@@ -750,49 +750,49 @@
             "shape": "table",
             "title": "sys_menu",
             "moduleName": false,
-            "x": 266.125,
-            "y": 153,
+            "x": 440,
+            "y": 400,
             "id": "28849ef2"
           },
           {
             "shape": "table",
             "title": "sys_role_menu",
             "moduleName": false,
-            "x": 690,
-            "y": 440,
+            "x": 870,
+            "y": 360,
             "id": "0b0ad5bd"
-          },
-          {
-            "shape": "table",
-            "title": "sys_role",
-            "moduleName": false,
-            "x": 1070,
-            "y": 110,
-            "id": "1e23f437"
           },
           {
             "shape": "table",
             "title": "sys_user",
             "moduleName": false,
-            "x": 1460,
-            "y": 170,
+            "x": 1960,
+            "y": 530,
             "id": "94ae635c"
-          },
-          {
-            "shape": "table",
-            "title": "sys_log",
-            "moduleName": false,
-            "x": 369.125,
-            "y": 607,
-            "id": "890fa4b7"
           },
           {
             "shape": "table",
             "title": "sys_user_role",
             "moduleName": false,
-            "x": 1290,
-            "y": 490,
+            "x": 1590,
+            "y": 360,
             "id": "2ef2d96f"
+          },
+          {
+            "shape": "table",
+            "title": "sys_log",
+            "moduleName": false,
+            "x": 910,
+            "y": 810,
+            "id": "890fa4b7"
+          },
+          {
+            "shape": "table",
+            "title": "sys_role",
+            "moduleName": false,
+            "x": 1250,
+            "y": 530,
+            "id": "1e23f437"
           }
         ],
         "edges": [
@@ -804,12 +804,12 @@
             "id": "7ed6bb3d",
             "controlPoints": [
               {
-                "x": 500.923828125,
-                "y": 55.185483870967744
+                "x": 674.798828125,
+                "y": 302.18548387096774
               },
               {
-                "x": 560.8779296875,
-                "y": 512.8452380952381
+                "x": 740.8779296875,
+                "y": 432.8452380952381
               }
             ],
             "sourceAnchor": 3,
@@ -823,12 +823,12 @@
             "id": "15bf67e7",
             "controlPoints": [
               {
-                "x": 931.5439453125,
-                "y": 42.17857142857143
+                "x": 1111.5439453125,
+                "y": 462.17857142857144
               },
               {
-                "x": 819.1220703125,
-                "y": 532.9404761904761
+                "x": 999.1220703125,
+                "y": 452.94047619047615
               }
             ],
             "sourceAnchor": 0,
@@ -842,12 +842,12 @@
             "id": "8e8a48df",
             "controlPoints": [
               {
-                "x": 1316.0439453125,
-                "y": 82.15
+                "x": 1816.0439453125,
+                "y": 442.15
               },
               {
-                "x": 1419.1220703125,
-                "y": 562.8452380952381
+                "x": 1719.1220703125,
+                "y": 432.8452380952381
               }
             ],
             "sourceAnchor": 0,
@@ -861,12 +861,12 @@
             "id": "0bef7911",
             "controlPoints": [
               {
-                "x": 1208.4560546875,
-                "y": 42.17857142857143
+                "x": 1388.4560546875,
+                "y": 462.17857142857144
               },
               {
-                "x": 1160.8779296875,
-                "y": 582.9404761904761
+                "x": 1460.8779296875,
+                "y": 452.94047619047615
               }
             ],
             "sourceAnchor": 1,
@@ -1312,6 +1312,12 @@
               "type": "Intro",
               "remark": "",
               "chnname": "备注"
+            },
+            {
+              "name": "project_id",
+              "type": "BigInt",
+              "remark": "",
+              "chnname": "项目ID"
             }
           ],
           "indexs": [],
@@ -1607,10 +1613,207 @@
         }
       ],
       "graphCanvas": {
-        "edges": [],
-        "nodes": []
+        "nodes": [
+          {
+            "shape": "table",
+            "title": "t_user",
+            "moduleName": false,
+            "x": 540,
+            "y": 210,
+            "id": "1f852197"
+          },
+          {
+            "shape": "table",
+            "title": "t_project_module",
+            "moduleName": false,
+            "x": 1620,
+            "y": 540,
+            "id": "25de77cd"
+          },
+          {
+            "shape": "table",
+            "title": "t_project_backlog",
+            "moduleName": false,
+            "x": 990,
+            "y": 960,
+            "id": "ddc6f073"
+          },
+          {
+            "shape": "table",
+            "title": "t_project_user",
+            "moduleName": false,
+            "x": 410,
+            "y": 660,
+            "id": "dcbf9991"
+          },
+          {
+            "shape": "table",
+            "title": "t_project",
+            "moduleName": false,
+            "x": 1110,
+            "y": 240,
+            "id": "60fc0e96"
+          }
+        ],
+        "edges": [
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "1f852197",
+            "target": "dcbf9991",
+            "id": "e0f570cd",
+            "controlPoints": [
+              {
+                "x": 697.4697265625,
+                "y": 122.15
+              },
+              {
+                "x": 226.2099609375,
+                "y": 722.7717391304348
+              }
+            ],
+            "sourceAnchor": 1,
+            "targetAnchor": 14
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "60fc0e96",
+            "target": "dcbf9991",
+            "id": "93feae4f",
+            "controlPoints": [
+              {
+                "x": 971.5439453125,
+                "y": 132.1293103448276
+              },
+              {
+                "x": 593.7900390625,
+                "y": 742.858695652174
+              }
+            ],
+            "sourceAnchor": 0,
+            "targetAnchor": 17
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "60fc0e96",
+            "target": "25de77cd",
+            "id": "e8f6c8db",
+            "controlPoints": [
+              {
+                "x": 1248.4560546875,
+                "y": 132.1293103448276
+              },
+              {
+                "x": 1450.2138671875,
+                "y": 652.95
+              }
+            ],
+            "sourceAnchor": 1,
+            "targetAnchor": 20
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "1f852197",
+            "target": "ddc6f073",
+            "id": "0506b253",
+            "controlPoints": [
+              {
+                "x": 697.4697265625,
+                "y": 122.15
+              },
+              {
+                "x": 818.20703125,
+                "y": 1052.7055555555555
+              }
+            ],
+            "sourceAnchor": 1,
+            "targetAnchor": 28
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "60fc0e96",
+            "target": "ddc6f073",
+            "id": "2218791a",
+            "controlPoints": [
+              {
+                "x": 971.5439453125,
+                "y": 132.1293103448276
+              },
+              {
+                "x": 1033.201299790996,
+                "y": 473
+              },
+              {
+                "x": 1161.79296875,
+                "y": 1172.9722222222222
+              }
+            ],
+            "sourceAnchor": 0,
+            "targetAnchor": 41
+          }
+        ]
       },
-      "associations": []
+      "associations": [
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "t_user",
+            "field": "id"
+          },
+          "to": {
+            "entity": "t_project_user",
+            "field": "user_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "t_project",
+            "field": "id"
+          },
+          "to": {
+            "entity": "t_project_user",
+            "field": "project_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "t_project",
+            "field": "id"
+          },
+          "to": {
+            "entity": "t_project_module",
+            "field": "project_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "t_user",
+            "field": "id"
+          },
+          "to": {
+            "entity": "t_project_backlog",
+            "field": "proposer_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "t_project",
+            "field": "id"
+          },
+          "to": {
+            "entity": "t_project_backlog",
+            "field": "project_id"
+          }
+        }
+      ]
     }
   ],
   "dataTypeDomains": {

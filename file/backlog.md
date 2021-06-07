@@ -246,6 +246,7 @@
 | status | 需求状态 | VARCHAR(32) |  |  |
 | development\_version | 开发版本 | VARCHAR(32) |  |  |
 | remark | 备注 | VARCHAR(512) |  |  |
+| project\_id | 项目ID | BIGINT |  |  |
 
  ---
 

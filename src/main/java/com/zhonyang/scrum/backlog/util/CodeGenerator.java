@@ -89,28 +89,27 @@ public class CodeGenerator {
                 return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
-        });
-        cfg.setFileOutConfigList(focList);
-        mpg.setCfg(cfg);
+		});
+		cfg.setFileOutConfigList(focList);
+		mpg.setCfg(cfg);
 
-        // 配置模板
-        TemplateConfig templateConfig = new TemplateConfig();
+		// 配置模板
+		TemplateConfig templateConfig = new TemplateConfig();
 
-        // 配置自定义输出模板
-        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
-        // templateConfig.setEntity("templates/entity2.java");
-        // templateConfig.setService();
-        // templateConfig.setController();
+		// 配置自定义输出模板
+		//指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
+		// templateConfig.setService();
+		templateConfig.setController("templates/controller.java");
 
-        templateConfig.setXml(null);
-        mpg.setTemplate(templateConfig);
+		templateConfig.setXml(null);
+		mpg.setTemplate(templateConfig);
 
-        // 策略配置
-        StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.underline_to_camel);
-        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.zhonyang.scrum.backlog.common.db.BaseEntity");
-        strategy.setEntityLombokModel(true);
+		// 策略配置
+		StrategyConfig strategy = new StrategyConfig();
+		strategy.setNaming(NamingStrategy.underline_to_camel);
+		strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+		strategy.setSuperEntityClass("com.zhonyang.scrum.backlog.common.db.BaseEntity");
+		strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
 //        // 公共父类
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
@@ -120,9 +119,9 @@ public class CodeGenerator {
         strategy.setSuperEntityColumns("created_time");
         strategy.setSuperEntityColumns("updated_by");
         strategy.setSuperEntityColumns("updated_time");
-        strategy.setSuperEntityColumns("deleted");
-        strategy.setInclude("sys_user");
-        strategy.setControllerMappingHyphenStyle(true);
+		strategy.setSuperEntityColumns("deleted");
+		strategy.setInclude("sys_role");
+		strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());

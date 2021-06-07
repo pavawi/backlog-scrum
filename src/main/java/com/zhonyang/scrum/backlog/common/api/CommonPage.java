@@ -1,5 +1,6 @@
 package com.zhonyang.scrum.backlog.common.api;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 
 import java.util.List;
@@ -11,9 +12,21 @@ import java.util.List;
  */
 @Data
 public class CommonPage<T> {
-    private Integer pageNum;
-    private Integer pageSize;
-    private Integer totalPage;
-    private Long total;
-    private List<T> list;
+	private Long current;
+	private Long size;
+	private double pages;
+	private Long total;
+	private List<T> records;
+
+	public static <T> CommonPage<T> restPage(Page<T> page) {
+		CommonPage<T> result = new CommonPage<T>();
+		result.setCurrent(page.getCurrent());
+		result.setSize(page.getSize());
+		result.setPages(page.getPages());
+		result.setTotal(page.getTotal());
+		result.setRecords(page.getRecords());
+		return result;
+	}
+
+
 }
