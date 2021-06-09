@@ -47,26 +47,33 @@ public class Result<T> implements Serializable {
         Result result = new Result();
         result.code = CommonErrorCode.SUCCESS.getCode();
         result.msg = CommonErrorCode.SUCCESS.getMessage();
-        result.setData(data);
-        return result;
-    }
+		result.setData(data);
+		return result;
+	}
 
-    public static Result ofFail(Integer code, String msg) {
-        Result result = new Result();
-        result.code = code;
-        result.msg = msg;
-        return result;
-    }
+	public static Result ofFail(Integer code, String msg) {
+		Result result = new Result();
+		result.code = code;
+		result.msg = msg;
+		return result;
+	}
 
-    public static Result ofFail(Integer code, String msg, Object data) {
-        Result result = new Result();
-        result.code = code;
-        result.msg = msg;
-        result.setData(data);
-        return result;
-    }
+	public static Result ofFail(String msg) {
+		Result result = new Result();
+		result.code = CommonErrorCode.BUSINESS_ERROR.getCode();
+		result.msg = msg;
+		return result;
+	}
 
-    public static Result ofFail(CommonErrorCode resultEnum) {
+	public static Result ofFail(Integer code, String msg, Object data) {
+		Result result = new Result();
+		result.code = code;
+		result.msg = msg;
+		result.setData(data);
+		return result;
+	}
+
+	public static Result ofFail(CommonErrorCode resultEnum) {
         Result result = new Result();
         result.code = resultEnum.getCode();
         result.msg = resultEnum.getMessage();

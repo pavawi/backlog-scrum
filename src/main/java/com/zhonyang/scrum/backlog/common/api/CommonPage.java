@@ -1,6 +1,6 @@
 package com.zhonyang.scrum.backlog.common.api;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.Data;
 
 import java.util.List;
@@ -18,15 +18,15 @@ public class CommonPage<T> {
 	private Long total;
 	private List<T> records;
 
-	public static <T> CommonPage<T> restPage(Page<T> page) {
-		CommonPage<T> result = new CommonPage<T>();
-		result.setCurrent(page.getCurrent());
-		result.setSize(page.getSize());
-		result.setPages(page.getPages());
-		result.setTotal(page.getTotal());
-		result.setRecords(page.getRecords());
-		return result;
+	public CommonPage() {
 	}
 
+	public CommonPage(IPage<T> page) {
+		this.setCurrent(page.getCurrent());
+		this.setSize(page.getSize());
+		this.setPages(page.getPages());
+		this.setTotal(page.getTotal());
+		this.setRecords(page.getRecords());
+	}
 
 }
